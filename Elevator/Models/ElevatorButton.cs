@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Elevator.Models
 {
-    class ElevatorButton : IButton
+    class ElevatorButton : IElevatorButton
     {
         public Enums.State Indicator { get; private set; }
-        public int FloorValue { get; private set; }
-        public ElevatorButton(int floorValue, bool indicator)
+        public string Value { get; private set; }
+        public ElevatorButton(string floorValue, bool indicator)
         {
-            FloorValue = floorValue;
+            Value = floorValue;
             Indicator = indicator == true ? Enums.State.Active : Enums.State.Inactive;
         }
         public void TurnLightOn()

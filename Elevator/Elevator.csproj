@@ -42,12 +42,12 @@
     <Compile Include="Interfaces\IDoor.cs" />
     <Compile Include="Interfaces\IElevator.cs" />
     <Compile Include="Interfaces\IButton.cs" />
+    <Compile Include="Interfaces\IElevatorButton.cs" />
     <Compile Include="Interfaces\IFloor.cs" />
     <Compile Include="Interfaces\IFloorButton.cs" />
     <Compile Include="Models\ElevatorDoor.cs" />
     <Compile Include="Models\FloorDoor.cs" />
-    <Compile Include="Models\DoorCloseButton.cs" />
-    <Compile Include="Models\DoorOpenButton.cs" />
+    <Compile Include="Models\DoorButton.cs" />
     <Compile Include="Models\Elevator.cs" />
     <Compile Include="Models\ElevatorButton.cs" />
     <Compile Include="Models\Floor.cs" />

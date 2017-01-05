@@ -20,7 +20,7 @@ namespace Elevator.Models
         public State OperationState { get; set; }
         private IDoor Door { get; set; }
         
-        public List<IButton> Buttons = new List<IButton>();
+        public List<IElevatorButton> Buttons = new List<IElevatorButton>();
         public Elevator(int currentFloor, int minFloor, int maxFloor, int floorStep)
         {
             State = ElevatorState.Standing;
@@ -36,10 +36,10 @@ namespace Elevator.Models
         {
             for (int i = min; i <= max; i += step)
             {
-                Buttons.Add(new ElevatorButton(i, false));
+                Buttons.Add(new ElevatorButton(i.ToString(), false));
             }
-            Buttons.Add(new DoorOpenButton());
-            Buttons.Add(new DoorCloseButton());
+            Buttons.Add(new DoorButton(true));
+            Buttons.Add(new DoorButton(false));
         }
         public void MoveUp()
         {

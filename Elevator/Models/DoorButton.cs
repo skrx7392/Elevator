@@ -7,9 +7,15 @@ using System.Threading.Tasks;
 
 namespace Elevator.Models
 {
-    class DoorOpenButton : IButton
+    class DoorButton : IElevatorButton
     {
         public Enums.State Indicator { get; private set; }
+        public string Value { get; private set; }
+        public DoorButton(bool value)
+        {
+            Indicator = Enums.State.Inactive;
+            Value = value.ToString();
+        }
         public void TurnLightOn()
         {
             Indicator = Enums.State.Active;
