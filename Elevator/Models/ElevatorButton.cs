@@ -9,20 +9,20 @@ namespace Elevator.Models
 {
     class ElevatorButton : IButton
     {
-        public bool Indicator { get; private set; }
+        public Enums.State Indicator { get; private set; }
         public int FloorValue { get; private set; }
         public ElevatorButton(int floorValue, bool indicator)
         {
             FloorValue = floorValue;
-            Indicator = indicator;
+            Indicator = indicator == true ? Enums.State.Active : Enums.State.Inactive;
         }
         public void TurnLightOn()
         {
-            Indicator = true;
+            Indicator = Enums.State.Active;
         }
         public void TurnLightOff()
         {
-            Indicator = false;
+            Indicator = Enums.State.Inactive;
         }
     }
 }
